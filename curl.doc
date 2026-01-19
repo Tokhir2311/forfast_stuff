@@ -1,0 +1,12 @@
+Curl stands for Client for URLs.
+
+it is command line tool for Linux, MacOs and windows. 
+
+functionally it is the same thing like a postman, but graphically.
+
+the get method how to use on curl 
+
+curl https://example.com-
+
+the post method is like this :
+curl data//

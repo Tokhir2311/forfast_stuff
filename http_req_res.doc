@@ -1,0 +1,154 @@
+used to hold both data and
+code.
+
+A class in Python is effectively a data type.
+
+All the data types built into Python are
+classes, (ustozdan soraymiz)
+
+By convention, class identifiers are in CapCase—that is, the first letter of each component word is capitalized, to make the identifiers stand out.
+
+Class instances can be used as structures or records. Unlike C structures or Java
+classes, the data fields of an instance don’t need to be declared ahead of time; they
+can be created on the fly.
+
+Take a look at the Circle class
+again:
+class Circle:
+ def __init__(self):
+ self.radius = 1
+radius is an instance variable of Circle instances. That is, each instance of the Circle class has its own copy of radius, and the value stored in that copy may be different from the values stored in the radius variable in other instances.
+
+
+bound vs unbound  method [ invoking ] ????
+
+A class variable is a variable associated with a class, not an instance of a class, and is
+accessible by all instances of the class.
+
+
+
+
+=================HTTP=============================
+
+
+hello sozi bordi 1chi kompdan 2 chi kompga 
+
+BIZGA  STANDART TIL KERAK EDI bu    HTML
+
+
+
+        standARTS
+
+
+
+LIST   | TOYS             | ELCHIN 
+
+
+GET    | TOY McQUEEN      | ELCHIN 
+
+
+CREATE | TOY SHIP         | ELCHIN 
+
+
+UPDATE | TOY SHIP TITANIC | ELCHIN 
+
+
+DELETE | TOY TITANIC      | ELCHIN 
+
+
+
+command | <item> | item_name | update_name (if available)  | address
+ 
+  
+  
+
+
+
+
+
+  request
+  
+GET  / users /  HTTP  1/1  } Request  Line 
+
+
+       _
+Accept - Language : en-US                  |
+Accept : application (json)     | ---  Header 
+Host : storage.kun.uz /      |
+User-Age : Mozilla 49.0 / Linux  6.7.9.0  _|
+
+
+{
+  " user_id" : 1       --> Body 
+}
+ 
+
+
+
+
+
+  response
+
+HTTP 1/1  /  200 /  OK    
+
+
+Header .....   -->  Head part 
+
+
+Body .....    -->  body part
+
+
+
+
+
+ response codes
+
+status kodlar 5 qismga bo`linadi  
+
+100 dan 199 gacha
+200 dan 299 gacha 
+300 dan 399 gacha 
+400 dan 499 gacha 
+500 dan 599 gacha
+
+
+***addition. agar ko`rsatilgan lardan tashkil topgan status kod kelmasa demak bu server tomonidan o`zgartirilgan kod bo`ladi.
+
+""Tushunganlarim 101, 200, 201, 202, 204, 301, 302, 303, 307, 400, 401, 402, 403, 404, 405, 422, 429, 500, 501, 502, 503.
+
+101 - comunication ni o`zgartirish ya`ni protocol ni http dan websocketga o`tkazish. client request qilganda [ upgrade ]  command bilan kelgan requestga 101 bilan response qiladi. Success bo`lib webstockka almashsa 101 qaytaradi 
+
+
+200 - hammasi joyida OK. egt commandi bilan kelgan request response olsa, va success bo`lsa 200 kodi keladi response tarkibida. \ it is cacheable \    it works for GET|POST|HEAD|TRACE
+
+201 -  Bu POST request muvaffaqiyatli ishlaganda qaytariladigan response kodi. bazida qilingan ishlar nima qilingani response body sida javob sifatida keladi. masalan user info larini qoshish. o`sha infodagi o`zgaruvchi qoshilgani haqida ma`lumot olamiz.
+
+
+202 - Bu ketgan request qabul qilingani haqida ammo xali ishga tushirilmagani agar tushirilsa xato sodir bo`lishi mumkinligini aytadi. Success bo`lsa 200 qaytadi ishga tushirilganidan so`ng.
+
+
+204 - delete command uchun response, u biriktirilgan data o`chirilgani haqida xabar beradi. \ cacheable \  bu PUT command bilan ham ishlaydi. masalan wiki. Malumot saqlanishi va javob response qaytmasligi kk userga ammo current page dan ketib qolmasligi ham kerak. shunda 204 beramiz.
+
+
+301 - Moved. Kelgan requestdagi so`ralgan resource ni response locationdagi URL ga burib yuboradi. Misol bilan tushuntirganda : client -> http://kun.uz/post/id_123    server -> https://kun.uz/post/id_123
+
+
+301 bilan 302 bir xil ish qiladi bittta farqdan tashqari  301 yangi location link olganda uni eskisi bilan almashtiradi va endi har safar client yangi manzilga request jo`natadi. agarda 302 topsa har safar eski manzilga request jo`natib ko`radi ammo topilmasa yangi manzilga jo`natadi va eski manzilni search engine dbsida saqlaydi 301 endi saqlamaydi.
+
+
+302 - Bu requestga yangi url link bilan javob beradi yangi kelgan response headerida new page berilgan bo`ladi. Browser automatically shu url orqali eski requestni jo`natadi.
+
+
+303 - 
+
+307 - 
+
+
+
+400 Bad request. Bu asosan get methodi bilan kelgan request body sida syntax xato bo`lsa sodir bo`ladi.
+
+
+401 - Unauthorized. Request qonuniy bo`lishi ham mumkin. Authdan o`tmaganlik uchun response. Ya`ni bironta GET/address/admin bunda qaytariladi yoki server browserda lack of auth kuzatilganligi uchun qaytaradi.
+
+
+402 - Future use ? bu to`lov bilan bog`liq xato, server client to`lov qilishini kutadi va bu nostandart error , vaziyatga qarab xar xil ishlatilinadi.
